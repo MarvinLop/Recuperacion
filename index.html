@@ -1,1 +1,534 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>INNOVA·IA | Aprende a crear sistemas innovadores con tu tutor de IA</title>
+<meta name="description" content="Página educativa del Proyecto 5: aprende a convertir una idea en un sistema innovador (ÁNIMA, IoT, apps, ERP e IA) con un tutor de inteligencia artificial.">
+
+<!-- Bootstrap 5 -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- Bootstrap Icons -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Sora:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/styles.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💡</text></svg>">
+</head>
+<body>
+
+<!-- ═══════════ CURSOR / BRILLO DE FONDO ═══════════ -->
+<div class="bg-fx" aria-hidden="true">
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+  <div class="grid-overlay"></div>
+</div>
+
+<!-- Barra de progreso -->
+<div id="scroll-progress"></div>
+
+<!-- ═══════════ NAVBAR ═══════════ -->
+<nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="#hero">
+      <span class="logo-mark">
+        <svg viewBox="0 0 40 40" width="34" height="34" aria-hidden="true">
+          <defs>
+            <linearGradient id="lg" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#22d3ee"/><stop offset="100%" stop-color="#a855f7"/>
+            </linearGradient>
+          </defs>
+          <path d="M20 3 L35 11 V27 L20 35 L5 27 V11 Z" fill="none" stroke="url(#lg)" stroke-width="2.2"/>
+          <circle cx="20" cy="19" r="4.5" fill="url(#lg)"/>
+          <circle cx="20" cy="8" r="2" fill="#22d3ee"/>
+          <circle cx="32" cy="25" r="2" fill="#a855f7"/>
+          <circle cx="8" cy="25" r="2" fill="#22d3ee"/>
+        </svg>
+      </span>
+      <span class="logo-text">INNOVA<span>·IA</span></span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navContent" aria-label="Menú">
+      <i class="bi bi-list"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navContent">
+      <ul class="navbar-nav ms-auto align-items-lg-center">
+        <li class="nav-item"><a class="nav-link" href="#hero">Inicio</a></li>
+        <li class="nav-item"><a class="nav-link" href="#que-es">¿Qué es innovar?</a></li>
+        <li class="nav-item"><a class="nav-link" href="#fuentes">Fuentes de ideas</a></li>
+        <li class="nav-item"><a class="nav-link" href="#validar">Validar</a></li>
+        <li class="nav-item"><a class="nav-link" href="#feria">Presentar</a></li>
+        <li class="nav-item"><a class="nav-link" href="#practica">Práctica</a></li>
+        <li class="nav-item"><a class="nav-link nav-cta" href="#practica"><i class="bi bi-robot me-1"></i>Tutor IA</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══════════ HERO ═══════════ -->
+<header class="hero" id="hero">
+  <canvas id="neural-canvas" aria-hidden="true"></canvas>
+
+  <div class="container hero-inner">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-7">
+        <span class="hero-pill reveal">
+          <span class="pulse-dot"></span>
+          Innovación · ÁNIMA · ERP · IoT · IA
+        </span>
+
+        <h1 class="hero-title reveal">
+          Aprende a crear <span class="grad-text" id="typing-word">sistemas innovadores</span>
+        </h1>
+
+        <p class="hero-sub reveal">
+          Un recorrido guiado para convertir <strong>una idea</strong> en un proyecto real:
+          detecta el problema, elige la tecnología y valida con usuarios.
+          Todo con tu <strong>tutor de IA</strong> disponible 24/7.
+        </p>
+
+        <div class="hero-buttons reveal">
+          <a href="#que-es" class="btn btn-glow">
+            <i class="bi bi-lightning-charge-fill me-2"></i>Comenzar el recorrido
+          </a>
+          <a href="#practica" class="btn btn-outline-glow">
+            <i class="bi bi-chat-dots me-2"></i>Hablar con el tutor
+          </a>
+        </div>
+
+        <div class="hero-metrics reveal">
+          <div class="metric"><span class="metric-num" data-count="4">0</span><span class="metric-lbl">Secciones guiadas</span></div>
+          <div class="metric"><span class="metric-num" data-count="5">0</span><span class="metric-lbl">Preguntas de idea</span></div>
+          <div class="metric"><span class="metric-num" data-count="7">0</span><span class="metric-lbl">Nota mínima aprobar</span></div>
+        </div>
+      </div>
+
+      <div class="col-lg-5">
+        <div class="hero-card-stack reveal">
+          <div class="lab-card lab-card-main">
+            <div class="lab-card-head">
+              <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+              <span class="lab-card-title">idea.txt</span>
+            </div>
+            <div class="lab-card-body">
+              <p><span class="c-key">problema</span><span class="c-op">:</span> <span class="c-str">"se pierde el inventario"</span></p>
+              <p><span class="c-key">usuario</span><span class="c-op">:</span> <span class="c-str">"tienda del barrio"</span></p>
+              <p><span class="c-key">tecnologia</span><span class="c-op">:</span> <span class="c-fn">QR</span> <span class="c-op">+</span> <span class="c-fn">App</span></p>
+              <p><span class="c-key">estado</span><span class="c-op">:</span> <span class="c-ok">▮ listo para validar</span></p>
+              <span class="cursor-blink"></span>
+            </div>
+          </div>
+          <div class="lab-chip chip-1"><i class="bi bi-cpu"></i> IoT</div>
+          <div class="lab-chip chip-2"><i class="bi bi-phone"></i> App</div>
+          <div class="lab-chip chip-3"><i class="bi bi-diagram-3"></i> ERP</div>
+          <div class="lab-chip chip-4"><i class="bi bi-stars"></i> IA</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <a href="#que-es" class="scroll-cue" aria-label="Bajar">
+    <span></span>
+  </a>
+</header>
+
+<!-- ═══════════ SECCIÓN 1 · QUÉ ES INNOVAR ═══════════ -->
+<section class="section" id="que-es">
+  <div class="container">
+    <div class="text-center section-head reveal">
+      <span class="kicker"><i class="bi bi-lightbulb-fill"></i> Sección 01</span>
+      <h2 class="section-title">¿Qué es <span class="grad-text">innovar</span>?</h2>
+      <p class="section-lead mx-auto">
+        Innovar no es inventar algo raro: es <strong>resolver un problema real</strong> de forma nueva y útil.
+        Toda innovación nace de tres piezas que debes saber identificar.
+      </p>
+    </div>
+
+    <div class="row g-4 mt-2">
+      <div class="col-md-4 reveal">
+        <div class="tri-card">
+          <div class="tri-icon"><i class="bi bi-exclamation-triangle"></i></div>
+          <span class="tri-step">Pieza 01</span>
+          <h4>Problema</h4>
+          <p>Algo que molesta, cuesta dinero o hace perder tiempo. Si no hay problema, no hay innovación.</p>
+          <div class="tri-example">Ej.: “en la tienda no sé cuánto me queda de cada producto”.</div>
+        </div>
+      </div>
+      <div class="col-md-4 reveal">
+        <div class="tri-card">
+          <div class="tri-icon"><i class="bi bi-people"></i></div>
+          <span class="tri-step">Pieza 02</span>
+          <h4>Usuario</h4>
+          <p>La persona concreta que sufre ese problema. No es “todos”: es alguien a quien puedes ir a preguntar.</p>
+          <div class="tri-example">Ej.: “doña Marta, dueña de la tienda de la esquina”.</div>
+        </div>
+      </div>
+      <div class="col-md-4 reveal">
+        <div class="tri-card">
+          <div class="tri-icon"><i class="bi bi-gear-wide-connected"></i></div>
+          <span class="tri-step">Pieza 03</span>
+          <h4>Solución</h4>
+          <p>La forma nueva y útil de resolverlo. Puede ser una app, un sensor, una tienda en línea o un sistema que ordena todo.</p>
+          <div class="tri-example">Ej.: “app con código QR que actualiza el inventario al vender”.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="formula-bar reveal">
+      <span class="fb-part"><i class="bi bi-exclamation-triangle"></i> Problema</span>
+      <span class="fb-op">+</span>
+      <span class="fb-part"><i class="bi bi-people"></i> Usuario</span>
+      <span class="fb-op">+</span>
+      <span class="fb-part"><i class="bi bi-gear-wide-connected"></i> Solución</span>
+      <span class="fb-op">=</span>
+      <span class="fb-part fb-result"><i class="bi bi-rocket-takeoff-fill"></i> Innovación</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ SECCIÓN 2 · FUENTES DE IDEAS ═══════════ -->
+<section class="section section-alt" id="fuentes">
+  <div class="container">
+    <div class="text-center section-head reveal">
+      <span class="kicker"><i class="bi bi-diagram-3-fill"></i> Sección 02</span>
+      <h2 class="section-title">De dónde salen las <span class="grad-text">ideas</span></h2>
+      <p class="section-lead mx-auto">
+        Cuatro fuentes tecnológicas modernas que puedes combinar para crear tu sistema innovador.
+        Toca cada tarjeta para ver un ejemplo real salvadoreño.
+      </p>
+    </div>
+
+    <div class="row g-4 mt-2">
+      <div class="col-sm-6 col-lg-3 reveal">
+        <div class="source-card" data-source="ia">
+          <div class="source-front">
+            <div class="source-icon" style="--sc:#a855f7"><i class="bi bi-stars"></i></div>
+            <h5>Inteligencia Artificial</h5>
+            <p>Sistemas que aprenden y ayudan a decidir.</p>
+            <span class="flip-hint">Ver ejemplo <i class="bi bi-arrow-repeat"></i></span>
+          </div>
+          <div class="source-back">
+            <h6>IA en acción</h6>
+            <p>Un chatbot que responde las dudas de los clientes de una ferretería a cualquier hora.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-3 reveal">
+        <div class="source-card" data-source="iot">
+          <div class="source-front">
+            <div class="source-icon" style="--sc:#22d3ee"><i class="bi bi-broadcast-pin"></i></div>
+            <h5>Internet de las Cosas</h5>
+            <p>Objetos conectados que envían datos.</p>
+            <span class="flip-hint">Ver ejemplo <i class="bi bi-arrow-repeat"></i></span>
+          </div>
+          <div class="source-back">
+            <h6>IoT en acción</h6>
+            <p>Sensores de humedad que avisan al celular cuándo regar el cultivo de café.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-3 reveal">
+        <div class="source-card" data-source="app">
+          <div class="source-front">
+            <div class="source-icon" style="--sc:#39ff88"><i class="bi bi-phone"></i></div>
+            <h5>Apps móviles</h5>
+            <p>Herramientas que caben en el bolsillo.</p>
+            <span class="flip-hint">Ver ejemplo <i class="bi bi-arrow-repeat"></i></span>
+          </div>
+          <div class="source-back">
+            <h6>App en acción</h6>
+            <p>Una app donde los socios de una cooperativa revisan su ahorro y hacen pedidos.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-3 reveal">
+        <div class="source-card" data-source="erp">
+          <div class="source-front">
+            <div class="source-icon" style="--sc:#ffb400"><i class="bi bi-diagram-3"></i></div>
+            <h5>Sistemas ERP</h5>
+            <p>Un solo sistema para toda la empresa.</p>
+            <span class="flip-hint">Ver ejemplo <i class="bi bi-arrow-repeat"></i></span>
+          </div>
+          <div class="source-back">
+            <h6>ERP en acción</h6>
+            <p>Un ERP que une ventas, inventario y contabilidad de una distribuidora de productos.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="anima-box reveal">
+      <div class="anima-badge">CASO REAL</div>
+      <div>
+        <h5><i class="bi bi-cpu-fill me-2"></i>ÁNIMA: cuando la tecnología cobra vida</h5>
+        <p class="mb-0">ÁNIMA es un ejemplo de sistema innovador que combina <strong>sensores (IoT)</strong>, una <strong>app móvil</strong> y <strong>datos en tiempo real</strong> para dar “vida” a un objeto: te avisa, te guía y aprende de ti. Es la prueba de que la innovación nace de combinar fuentes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ SECCIÓN 3 · VALIDAR IDEA ═══════════ -->
+<section class="section" id="validar">
+  <div class="container">
+    <div class="text-center section-head reveal">
+      <span class="kicker"><i class="bi bi-patch-check-fill"></i> Sección 03</span>
+      <h2 class="section-title">Cómo <span class="grad-text">validar</span> tu idea</h2>
+      <p class="section-lead mx-auto">
+        Una idea no vale por lo bonita, sino porque alguien la necesita. Validar es
+        <strong>preguntar a usuarios reales</strong> antes de construir de más.
+      </p>
+    </div>
+
+    <div class="row g-5 align-items-center">
+      <div class="col-lg-5 reveal">
+        <div class="valid-checklist">
+          <h5 class="mb-4"><i class="bi bi-clipboard2-check me-2"></i>Antes de construir, pregunta:</h5>
+          <div class="check-item"><span class="check-num">1</span><div><strong>¿Quién la necesita?</strong><p>Nombra personas concretas, no “todo el mundo”.</p></div></div>
+          <div class="check-item"><span class="check-num">2</span><div><strong>¿Qué problema resuelve?</strong><p>Descríbelo en una frase simple.</p></div></div>
+          <div class="check-item"><span class="check-num">3</span><div><strong>¿Qué la hace diferente?</strong><p>Compara con lo que ya existe en tu comunidad.</p></div></div>
+          <div class="check-item"><span class="check-num">4</span><div><strong>¿Se puede hacer?</strong><p>Con el tiempo y los recursos que tienes hoy.</p></div></div>
+          <div class="check-item"><span class="check-num">5</span><div><strong>¿Alguien la usaría?</strong><p>Que 3 personas reales te digan “sí, yo la usaría”.</p></div></div>
+        </div>
+      </div>
+
+      <div class="col-lg-7 reveal">
+        <div class="valid-visual">
+          <div class="vv-head">
+            <span class="vv-live"><span class="pulse-dot"></span> Prueba con usuarios</span>
+            <span class="mono-mini">4/5 pasos completos</span>
+          </div>
+          <div class="vv-bars">
+            <div class="vv-bar"><span class="vv-lbl">Problema claro</span><div class="vv-track"><div class="vv-fill" data-w="100"></div></div><span class="vv-pct">100%</span></div>
+            <div class="vv-bar"><span class="vv-lbl">Usuario definido</span><div class="vv-track"><div class="vv-fill" data-w="90"></div></div><span class="vv-pct">90%</span></div>
+            <div class="vv-bar"><span class="vv-lbl">Diferencia vs. otros</span><div class="vv-track"><div class="vv-fill" data-w="75"></div></div><span class="vv-pct">75%</span></div>
+            <div class="vv-bar"><span class="vv-lbl">Es realizable</span><div class="vv-track"><div class="vv-fill" data-w="85"></div></div><span class="vv-pct">85%</span></div>
+          </div>
+          <div class="vv-foot">
+            <i class="bi bi-info-circle"></i>
+            <span>Si tres personas reales te dicen que la usarían, tu idea está lista para el prototipo.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ SECCIÓN 4 · PRESENTAR EN FERIA ═══════════ -->
+<section class="section section-alt" id="feria">
+  <div class="container">
+    <div class="text-center section-head reveal">
+      <span class="kicker"><i class="bi bi-megaphone-fill"></i> Sección 04</span>
+      <h2 class="section-title">Cómo <span class="grad-text">presentar</span> tu proyecto</h2>
+      <p class="section-lead mx-auto">
+        En una feria no gana el que más sabe, sino el que mejor <strong>explica</strong> en poco tiempo.
+        Sigue este guion de 60 segundos.
+      </p>
+    </div>
+
+    <div class="pitch-timeline reveal">
+      <div class="pitch-step">
+        <div class="pitch-time">0s – 10s</div>
+        <div class="pitch-body">
+          <i class="bi bi-emoji-frown"></i>
+          <h6>El gancho</h6>
+          <p>Muestra el problema con una historia real y corta.</p>
+        </div>
+      </div>
+      <div class="pitch-step">
+        <div class="pitch-time">10s – 25s</div>
+        <div class="pitch-body">
+          <i class="bi bi-lightbulb"></i>
+          <h6>Tu solución</h6>
+          <p>Di qué construiste y cómo resuelve el problema.</p>
+        </div>
+      </div>
+      <div class="pitch-step">
+        <div class="pitch-time">25s – 45s</div>
+        <div class="pitch-body">
+          <i class="bi bi-play-btn"></i>
+          <h6>La demo</h6>
+          <p>Muestra funcionando, aunque sea un prototipo pequeño.</p>
+        </div>
+      </div>
+      <div class="pitch-step">
+        <div class="pitch-time">45s – 60s</div>
+        <div class="pitch-body">
+          <i class="bi bi-people"></i>
+          <h6>El impacto</h6>
+          <p>Cierra con a quién ayudaste y qué sigue después.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row g-4 mt-4">
+      <div class="col-md-6 reveal">
+        <div class="tip-card do">
+          <h6><i class="bi bi-check-circle-fill me-2"></i>SÍ hazlo</h6>
+          <ul>
+            <li>Habla claro y mira a los jueces.</li>
+            <li>Ensaya tu presentación en voz alta.</li>
+            <li>Lleva la demo lista para mostrar.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-6 reveal">
+        <div class="tip-card dont">
+          <h6><i class="bi bi-x-circle-fill me-2"></i>NO lo hagas</h6>
+          <ul>
+            <li>Leer todo desde una diapositiva.</li>
+            <li>Usar palabras que no entiendes.</li>
+            <li>Decir que “es para todos” sin ejemplos.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ MINI PRÁCTICA ═══════════ -->
+<section class="section" id="practica">
+  <div class="container">
+    <div class="text-center section-head reveal">
+      <span class="kicker"><i class="bi bi-controller"></i> Mini práctica</span>
+      <h2 class="section-title">Pon a prueba tu <span class="grad-text">idea</span></h2>
+      <p class="section-lead mx-auto">
+        Escribe tu idea y el tutor de IA te hará <strong>5 preguntas</strong> para mejorarla.
+        Después, resuelve el quiz de 5 preguntas.
+      </p>
+    </div>
+
+    <div class="row g-4 justify-content-center">
+      <!-- Ejercicio guiado por IA -->
+      <div class="col-lg-6 reveal">
+        <div class="glass-panel h-100">
+          <div class="panel-head">
+            <div class="panel-icon" style="--pc:#a855f7"><i class="bi bi-stars"></i></div>
+            <div>
+              <h5>Mejora tu idea con IA</h5>
+              <p>El tutor te hará 5 preguntas para madurarla.</p>
+            </div>
+          </div>
+
+          <label for="idea-input" class="form-label-mini">Describe tu idea en 1 o 2 frases</label>
+          <textarea id="idea-input" class="neo-input" rows="3" maxlength="500" placeholder="Ej.: una app que avisa al celular cuándo se acaba el producto en mi tienda..."></textarea>
+          <div class="input-meta">
+            <span><i class="bi bi-lightbulb"></i> Sé concreto y local</span>
+            <span><span id="idea-count">0</span>/500</span>
+          </div>
+
+          <button id="btn-mejorar" class="btn btn-glow w-100 mt-3">
+            <i class="bi bi-magic me-2"></i>Mejorar mi idea
+          </button>
+
+          <div id="idea-result" class="mt-3"></div>
+        </div>
+      </div>
+
+      <!-- Quiz -->
+      <div class="col-lg-6 reveal">
+        <div class="glass-panel h-100">
+          <div class="panel-head">
+            <div class="panel-icon" style="--pc:#22d3ee"><i class="bi bi-patch-question"></i></div>
+            <div>
+              <h5>Quiz de innovación</h5>
+              <p>5 preguntas para comprobar lo aprendido.</p>
+            </div>
+          </div>
+          <div id="quiz-box"><!-- Generado por JS --></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer class="footer">
+  <div class="container">
+    <div class="row g-4 align-items-start">
+      <div class="col-lg-5">
+        <a class="footer-brand" href="#hero">
+          <span class="logo-mark small">
+            <svg viewBox="0 0 40 40" width="26" height="26" aria-hidden="true">
+              <path d="M20 3 L35 11 V27 L20 35 L5 27 V11 Z" fill="none" stroke="url(#lg)" stroke-width="2.4"/>
+              <circle cx="20" cy="19" r="4.5" fill="url(#lg)"/>
+            </svg>
+          </span>
+          INNOVA<span>·IA</span>
+        </a>
+        <p class="footer-desc">Página educativa del Proyecto 5 — “Aprende a hacer sistemas innovadores con tu tutor de IA”. Innovación: ÁNIMA, ERP e IA.</p>
+      </div>
+      <div class="col-sm-6 col-lg-3">
+        <h6 class="footer-title">Secciones</h6>
+        <div class="footer-links">
+          <a href="#que-es">¿Qué es innovar?</a>
+          <a href="#fuentes">Fuentes de ideas</a>
+          <a href="#validar">Validar idea</a>
+          <a href="#feria">Presentar</a>
+          <a href="#practica">Mini práctica</a>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-4">
+        <h6 class="footer-title">Proyecto</h6>
+        <p class="footer-desc mb-2">Recuperación Extraordinaria · 3DS “B”</p>
+        <p class="footer-desc mb-2">INDEL · Instituto Nacional Cantón Lourdes</p>
+        <p class="footer-desc mb-0">Prof. Javier Mineros</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> INNOVA·IA · Hecho con HTML, CSS y JavaScript</span>
+      <span class="footer-tech"><i class="bi bi-bootstrap-fill"></i> Bootstrap 5 · <i class="bi bi-robot"></i> Tutor IA</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══════════ BOTONES FLOTANTES ═══════════ -->
+<button id="back-to-top" class="float-btn" aria-label="Volver arriba"><i class="bi bi-arrow-up"></i></button>
+
+<button id="chat-toggle" class="chat-fab" aria-label="Abrir tutor de IA">
+  <i class="bi bi-robot"></i>
+  <span class="chat-fab-ring"></span>
+  <span class="chat-fab-badge">IA</span>
+</button>
+
+<!-- ═══════════ VENTANA DEL CHAT ═══════════ -->
+<div id="chat-window" class="chat-window" role="dialog" aria-label="Tutor de IA">
+  <div class="chat-head">
+    <div class="chat-head-left">
+      <div class="chat-bot-avatar"><i class="bi bi-robot"></i></div>
+      <div>
+        <span class="chat-name">Tutor de Innovación</span>
+        <span class="chat-state"><span class="pulse-dot green"></span> En línea · responde al instante</span>
+      </div>
+    </div>
+    <button id="chat-close" class="chat-close" aria-label="Cerrar"><i class="bi bi-x-lg"></i></button>
+  </div>
+
+  <div id="chat-messages" class="chat-messages">
+    <div class="msg bot">
+      ¡Hola! 👋 Soy tu mentor de innovación. Cuéntame tu idea o pregúntame sobre <strong>ÁNIMA</strong>, <strong>IoT</strong>, <strong>apps</strong>, <strong>ERP</strong> o <strong>IA</strong>, y la trabajamos juntos.
+    </div>
+  </div>
+
+  <div class="chat-chips">
+    <button class="chip" data-q="¿Qué es innovar y en qué se diferencia de inventar?">¿Qué es innovar?</button>
+    <button class="chip" data-q="Dame un ejemplo de sistema innovador con IoT en El Salvador.">Ejemplo con IoT</button>
+    <button class="chip" data-q="¿Cómo valido mi idea con usuarios reales?">Validar idea</button>
+  </div>
+
+  <div class="chat-inputbar">
+    <input type="text" id="chat-input" class="chat-input" placeholder="Escribe tu pregunta..." autocomplete="off">
+    <button id="chat-send" class="chat-send" aria-label="Enviar"><i class="bi bi-send-fill"></i></button>
+  </div>
+</div>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/main.js"></script>
+<script src="js/quiz.js"></script>
+<script src="js/tutor.js"></script>
+</body>
+</html>
 
